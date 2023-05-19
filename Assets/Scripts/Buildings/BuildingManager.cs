@@ -5,7 +5,6 @@ public class BuildingManager : Singleton<BuildingManager>
 {
     [SerializeField] public bool isDraggingABuilding;
     [SerializeField] public DraggingObject draggingObject;
-    [SerializeField] private LayerMask draggingOverlapLayerMask;
 
     private void Update()
     {
@@ -76,7 +75,8 @@ public class BuildingManager : Singleton<BuildingManager>
     {
         var offset = new Vector3(0.2f, 0, 0.2f);
         var buildingRadius = building.colliderReference.radius;
-        var isOverlap = Physics.OverlapBox(position, new Vector3(buildingRadius, buildingRadius, buildingRadius) + offset, Quaternion.identity, draggingOverlapLayerMask);
+        LayerMask ignoredLayerMasks = ~(1 << 0 | 1 << 1 | 1 << 2 | 1 << 4 | 1 << 5 | 1 << 3);
+        var isOverlap = Physics.OverlapBox(position, new Vector3(buildingRadius, buildingRadius, buildingRadius) + offset, Quaternion.identity, ignoredLayerMasks);
         
         if (isOverlap.Length > 0)
             return false;

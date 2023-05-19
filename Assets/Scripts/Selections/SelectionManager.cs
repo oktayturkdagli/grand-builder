@@ -9,8 +9,9 @@ public class SelectionManager : Singleton<SelectionManager>
     private Rect selectionBox;
     private Vector2 startPosition;
     private Vector2 endPosition;
-    public LayerMask selectable;
     private ISelectable onHoveringObject = null;
+    private readonly LayerMask hoveringLayerMasks = (1 << 6 | 1 << 7);
+    private readonly LayerMask leftClickIgnoredLayerMasks = ~(1 << 1 | 1 << 2 | 1 << 4 | 1 << 5);
     [SerializeField] public bool isDraggingSelectionBox;
     
     public readonly List<ISelectable> selectableObjects = new List<ISelectable>();
@@ -37,7 +38,7 @@ public class SelectionManager : Singleton<SelectionManager>
     {
         Ray ray = cam.ScreenPointToRay(Mouse.current.position.ReadValue()); // Creates a Ray from the mouse position
 
-        if (Physics.Raycast(ray, out var hit, Mathf.Infinity, selectable))
+        if (Physics.Raycast(ray, out var hit, Mathf.Infinity, hoveringLayerMasks))
         {
             if (hit.collider.gameObject.TryGetComponent(out ISelectable selectableObject))
             {
@@ -72,7 +73,7 @@ public class SelectionManager : Singleton<SelectionManager>
     {
         Ray ray = cam.ScreenPointToRay(Mouse.current.position.ReadValue()); // Creates a Ray from the mouse position
 
-        if (Physics.Raycast(ray, out var hit, Mathf.Infinity, selectable))
+        if (Physics.Raycast(ray, out var hit, Mathf.Infinity, leftClickIgnoredLayerMasks))
         {
             if (Keyboard.current.leftShiftKey.isPressed)
             {
@@ -189,7 +190,8 @@ public class SelectionManager : Singleton<SelectionManager>
     {
         DeselectAll();
         selectedObjects.Add(unitToAdd);
-        unitToAdd.CircleBottom.SetActive(true);
+        if (unitToAdd.CircleBottom)
+            unitToAdd.CircleBottom.SetActive(true);
         unitToAdd.OnSelect();
     }
 
@@ -223,7 +225,8 @@ public class SelectionManager : Singleton<SelectionManager>
     {
         foreach (var unit in selectedObjects)
         {
-            unit.CircleBottom.SetActive(false);
+            if (unit.CircleBottom) 
+                unit.CircleBottom.SetActive(false);
             unit.OnDeSelect();
         }
         selectedObjects.Clear();

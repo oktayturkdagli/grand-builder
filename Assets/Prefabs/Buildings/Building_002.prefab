@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 1110252835704266244}
   - component: {fileID: 6848345424301855210}
   - component: {fileID: 6252064269949717110}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HealthBarImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -253,7 +253,7 @@ GameObject:
   - component: {fileID: 215709634304937538}
   - component: {fileID: 7764137522782641790}
   - component: {fileID: 2910970056198905479}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HealthBarBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -411,7 +411,7 @@ GameObject:
   m_Component:
   - component: {fileID: 186637258236196649}
   - component: {fileID: 1194365437161053199}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BarContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -477,7 +477,7 @@ GameObject:
   - component: {fileID: 6409766686064974712}
   - component: {fileID: 558188020865585998}
   - component: {fileID: 6167834184710786963}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ProgressBarImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -554,7 +554,7 @@ GameObject:
   - component: {fileID: 659301652663158498}
   - component: {fileID: 6645488196995190118}
   - component: {fileID: 8580754818129451229}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HealthAndProgressBarsCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -599,6 +599,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
@@ -736,7 +737,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6559281866738201968}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ProgressBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -774,7 +775,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8241949891163342830}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -994,7 +995,7 @@ GameObject:
   - component: {fileID: 6457044253462602538}
   - component: {fileID: 6966899350642394511}
   - component: {fileID: 3308290677701479091}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CircleBottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1099,7 +1100,7 @@ GameObject:
   - component: {fileID: 3193296749657968061}
   - component: {fileID: 462808195716326130}
   - component: {fileID: 3658634304551489348}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ProgressBarBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}

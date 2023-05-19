@@ -5,8 +5,7 @@ using UnityEngine.InputSystem;
 public class RouteManager : Singleton<RouteManager>
 {
     private Camera cam;
-    public LayerMask selectable;
-    
+    LayerMask ignoredLayerMasks = ~(1 << 1 | 1 << 2 | 1 << 4 | 1 << 5);
     private void Start()
     {
         cam = Camera.main;
@@ -20,7 +19,7 @@ public class RouteManager : Singleton<RouteManager>
         Vector3 mousePosition = EventManager.Instance.OnRequestMousePositionIn3D();
         Ray ray = cam.ScreenPointToRay(Mouse.current.position.ReadValue()); // Creates a Ray from the mouse position
         
-        if (Physics.Raycast(ray, out var hit, Mathf.Infinity, selectable))
+        if (Physics.Raycast(ray, out var hit, Mathf.Infinity, 1 << 6))
         {
             if (hit.collider.gameObject.TryGetComponent(out Element elementObject))
             {
