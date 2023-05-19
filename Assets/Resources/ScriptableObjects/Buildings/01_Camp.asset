@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7a50c926e58f9949bf35a0feab50eaa, type: 3}
+  m_Name: 01_Camp
+  m_EditorClassIdentifier: 
+  title: Camp
+  prefab: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 2536bf16a5e4a3b4a8c41ef1ef343900, type: 3}
+  parentObject: {fileID: 0}
+  childObjects:
+  - {fileID: 11400000, guid: 75821ba01d1f9aa4884de60d11548134, type: 2}
+  - {fileID: 11400000, guid: 159e34e5384e168468654fee0487c0d5, type: 2}
+  - {fileID: 11400000, guid: 06174ae1f03dd694880852652ec969cc, type: 2}
